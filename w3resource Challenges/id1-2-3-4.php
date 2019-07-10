@@ -1,13 +1,15 @@
 <?php
 //Checks if the input is power of given number.
 
-$input = 16;
+$input = 3;
 $power = 3;
 
 function isPowerOf($number, &$power) {
 	$actualPower = $power;
 	$isPower = false;
-	while ($number > ($power / 2)) {
+	if ($number === $power)
+		$isPower = true;
+	while ($number > $power) {
 		$power *= $power;
 		if ($power === $number) {
 			$isPower = true;
